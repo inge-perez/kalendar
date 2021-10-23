@@ -1,0 +1,187 @@
+﻿@inject IRepositorio repositorio
+@inject IJSRuntime JsRuntime;
+@inject NavigationManager navigationManager
+
+
+<div class="listing-form">
+    <EditForm Model="@Evento" OnValidSubmit="Crear">
+        <DataAnnotationsValidator />
+        <MudCard>
+            <MudCardContent>
+                <div class="inner-box">
+                    <h3 class="inner-item-heading2">Información General</h3>
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <MudTextField Label="Nombre del Evento" Variant="Variant.Outlined"
+                                          @bind-Value="Evento.NombreEvento" For="@(() => Evento.NombreEvento)" />
+                        </div>
+                        <div class="col-12 form-group">
+                            <MudTextField T="string" Label="Descripción" Variant="Variant.Outlined" Lines="3"
+                                          @bind-Value="Evento.DescripcionEvento" For="@(() => Evento.DescripcionEvento)" />
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <MudSelect T="object"
+                                       Required="true"
+                                       Label="Tipo Evento"
+                                       Variant="Variant.Outlined"
+                                       OffsetY="true"
+                                       @bind-SelectedValues="@options">
+                                @foreach (var categoria in Categorias)
+                                {
+                                <MudSelectItem T="object" Value="@categoria.Descripcion">@categoria.Descripcion</MudSelectItem>}
+                            </MudSelect>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <MudDatePicker Label="Fecha del Evento" @bind-Date="date" DateFormat="dd/MMM/yyyy" Variant="Variant.Outlined" MinDate="date"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner-box">
+                    <h3 class="inner-item-heading2">Ubicación</h3>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <MudSelect ValueChanged="(int i) => CargarMunicipio(i)"
+                                       Label="Departamento"
+                                       Variant="Variant.Outlined"
+                                       OffsetY="true"
+                                       Strict="true"
+                                       Required="true">
+                                @foreach (var departamento in Departamentos)
+                                {
+    <MudSelectItem Value="@departamento.Id">@departamento.Nombre</MudSelectItem>}
+                            </MudSelect>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <MudSelect T="int"
+                                       @bind-Value="Evento.MunicipioId" For="@(() => Evento.MunicipioId)" 
+                                       Label="Municipio"
+                                       Variant="Variant.Outlined"
+                                       OffsetY="true"
+                                       Strict="true"
+                                       Required="true">
+                                @foreach (var municipio in Municipios)
+                                {
+    <MudSelectItem Value="@municipio.Id">@municipio.Nombre</MudSelectItem>}
+                            </MudSelect>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner-box menu-list-wrapper">
+                    <h3 class="inner-item-heading2">Imágen</h3>
+                    @if (imagenBase64 == null)
+                    {
+    <label>Agrega o arrastra tu imágen</label>}
+
+                    <div class="row menu-list">
+                        <div class="col-md-4 menu-item">
+                            <div class="form-group">
+                                @if (imagenBase64 == null)
+                                {
+        <InputFile id="img-upload1" class="form-control img-upload-box" OnChange="OnChangeImage" accept=".jpg,.jpeg,.png" />}
+                                @if (imagenBase64 != null)
+                                {
+        <div>
+            <a href="#" class="btn-link form-group"><i class="fas fa-sync-alt"></i>Cambiar</a>
+            <img src="data:image/jpeg;base64, @imagenBase64" style="height: 150px; width: 212px;" />
+        </div>}
+                            </div>
+                            @error
+                        </div>
+                    </div>
+                </div>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Class="btn-primary">Cargar Evento</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </EditForm>
+</div>
+
+@code
+{
+    private EventoCreacionDTO Evento = new EventoCreacionDTO();
+    private List<Departamento> Departamentos = new List<Departamento>();
+    private List<Municipio> Municipios = new List<Municipio>();
+    private List<Categoria> Categorias = new List<Categoria>();
+    private bool MostrarFormulario { get; set; } = false;
+    DateTime? date = DateTime.Today;
+    private string imagenBase64;
+    private string error;
+    private HashSet<object> options { get; set; } = new HashSet<object>() { "Cultural" };
+    private string defaulValue = "Cultural";
+
+    Func<Categoria, string> converter = p => p?.Descripcion;
+
+
+    protected async override Task OnInitializedAsync()
+    {
+        var responseHttp = await repositorio.Get<List<Departamento>>("api/departamentos");
+        Departamentos = responseHttp.Response;
+        @*var responseHttpCategoria = await repositorio.Get<List<Categoria>>("api/eventos/obtenerCategoria");
+        Categorias = responseHttpCategoria.Response;*@
+    MostrarFormulario = true;
+
+    Categorias.Add(new Categoria() { Id = Guid.Parse("80e1bff0-e4b1-4f33-892b-261be8a85d41"), Descripcion = "Cultural" });
+    Categorias.Add(new Categoria() { Id = Guid.Parse("e1e24641-510c-42c3-9903-9f38beee423e"), Descripcion = "Deportivo" });
+    Categorias.Add(new Categoria() { Id = Guid.Parse("344ea080-ceff-4d28-945e-fd7aa7bd638d"), Descripcion = "Social" });
+   
+
+}
+
+private async Task CargarMunicipio(int i)
+{
+    if (i != 0)
+    {
+        var responseHttp = await repositorio.Get<List<Municipio>>($"api/municipios/{i}");
+        Municipios = responseHttp.Response;
+    }
+    else
+        Municipios = new List<Municipio>();
+
+}
+private async Task cargar(Guid i)
+{
+    Evento.CategoriaId = Guid.Parse("80e1bff0-e4b1-4f33-892b-261be8a85d41");
+}
+
+private async Task Crear()
+{
+
+    //isLoading = true;
+    var httpResponse = await repositorio.Post("api/eventos/crear", Evento);
+
+    if (httpResponse.Error)
+    {
+        var mensajeError = await httpResponse.GetBody();
+        //isLoading = false;
+        //await mostrarMensajes.MostrarMensajeError(mensajeError);
+    }
+    else
+    {
+        navigationManager.NavigateTo("/");
+    }
+}
+
+async Task OnChangeImage(InputFileChangeEventArgs e)
+{
+    var imagenes = e.GetMultipleFiles();
+
+    foreach (var imagen in imagenes)
+    {
+        try
+        {
+            var arrbytes = new byte[imagen.Size];
+            await imagen.OpenReadStream(Constants.maxSizeFile).ReadAsync(arrbytes);
+            imagenBase64 = Convert.ToBase64String(arrbytes);
+            //await ImagenSeleccionada.InvokeAsync(imagenBase64);
+            //StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            error = ex.Message;
+        }
+
+    }
+
+}
+}

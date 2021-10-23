@@ -1,0 +1,96 @@
+﻿@page "/"
+@page "/index"
+
+@inject IRepositorio  repositorio
+
+<div class="row">
+    <div class="col-lg-8">
+        <FiltroBusqueda />
+        <div class="filter-result-box">02 Mayo 2021</div>
+        <div class="listing-box-list">
+            <div class="product-box">
+                <div class="item-img bg--gradient-50">
+                    <img src="img/listing/listing-25.jpg" alt="Listing"
+                         class="img-fluid list-view-img">
+                </div>
+                <div class="item-content">
+                    <h3 class="item-title"><a href="#">Westfield Restaurant</a></h3>
+                    <p>Aimply dummy text offer the printing and types etting industry remarea.</p>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>59 Street, Mk tower,
+                            Brooklyn
+                        </li>
+                        <li><i class="far fa-calendar-alt"></i>19th August, 2018</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <ul class="pagination-layout1">
+            <li>
+                <a href="#"><i class="flaticon-back"></i></a>
+            </li>
+            <li class="active">
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">5</a>
+            </li>
+            <li>
+                <a href="#">6</a>
+            </li>
+            <li>
+                <a href="#">7</a>
+            </li>
+            <li>
+                <a href="#"><i class="flaticon-right-arrow"></i></a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-lg-4 sidebar-widget-area sidebar-break-md">
+        <div class="widget widget-box-padding widget-new-rated">
+            <h3 class="widget-title">Featured Events</h3>
+            <ul class="block-list">
+                <li class="single-item">
+                    <div class="item-img">
+                        <a href="#"><img src="img/event/featured-event1.jpg" alt="Post"></a>
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title"><a href="#">Shanghai Hotel</a></h4>
+                        <div class="item-place">China Town</div>
+                        <ul class="item-rating">
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="widget widget-poster widget-box-padding">
+            <div class="item-img">
+                <img src="img/figure/sidebar-figure.jpg" alt="Poster" class="img-fluid">
+            </div>
+        </div>
+        <div class="widget widget-contact-info">
+            <div class="bg-icon">
+                <i class="flaticon-phone-call"></i>
+            </div>
+            <h4 class="item-title">Need Any Information?</h4>
+            <p>Please Contact Our Experts</p>
+            <div class="contact-number">+123 895 000 963</div>
+        </div>
+    </div>
+</div>
