@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{35B15083-ED37-4061-8869-A5F2505171EE}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AppEventos/Client/Pages/Account/UserDashboard.razor">
+    <Files>
+      <File FileName="AppEventos/Client/Pages/Account/NewEvent.razor" Line="124" Column="9" />
+      <File FileName="AppEventos/Client/Pages/Account/UserDashboard.razor" Line="16" Column="18" />
+      <File FileName="AppEventos/Shared/Entidades/Categoria.cs" />
+      <File FileName="AppEventos/Server/appsettings.Development.json" />
+      <File FileName="AppEventos/Server/Controllers/CategoriasController.cs" />
+      <File FileName="AppEventos/Server/Controllers/DepartamentosController.cs" />
+      <File FileName="AppEventos/Server/Controllers/EventosController.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AppEventos" expanded="True" selected="True">
+            <Node name="AppEventos.Client" expanded="True">
+              <Node name="Pages" expanded="True">
+                <Node name="Account" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.AppEventos.Server PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

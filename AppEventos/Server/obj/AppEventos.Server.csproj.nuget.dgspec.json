@@ -1,0 +1,240 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Server/AppEventos.Server.csproj": {}
+  },
+  "projects": {
+    "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Client/AppEventos.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Client/AppEventos.Client.csproj",
+        "projectName": "AppEventos.Client",
+        "projectPath": "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Client/AppEventos.Client.csproj",
+        "packagesPath": "/Users/juanseperez/.nuget/packages/",
+        "outputPath": "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Client/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/juanseperez/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Shared/AppEventos.Shared.csproj": {
+                "projectPath": "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Shared/AppEventos.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.browser-wasm",
+              "version": "[5.0.9, 5.0.9]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    },
+    "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Server/AppEventos.Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Server/AppEventos.Server.csproj",
+        "projectName": "AppEventos.Server",
+        "projectPath": "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Server/AppEventos.Server.csproj",
+        "packagesPath": "/Users/juanseperez/.nuget/packages/",
+        "outputPath": "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Server/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/juanseperez/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Client/AppEventos.Client.csproj": {
+                "projectPath": "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Client/AppEventos.Client.csproj"
+              },
+              "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Shared/AppEventos.Shared.csproj": {
+                "projectPath": "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Shared/AppEventos.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "Microsoft.AspNetCore.ApiAuthorization.IdentityServer": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Shared/AppEventos.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Shared/AppEventos.Shared.csproj",
+        "projectName": "AppEventos.Shared",
+        "projectPath": "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Shared/AppEventos.Shared.csproj",
+        "packagesPath": "/Users/juanseperez/.nuget/packages/",
+        "outputPath": "/Users/juanseperez/Documents/Juanse/Proyectos/AppEventos/AppEventos/Shared/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/juanseperez/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
